@@ -1,0 +1,30 @@
+# NPM
+/node_modules
+npm-debug.log
+
+# Storage Excludes
+/public/storage
+/storage/*.key
+/public/hot
+/storage/clockwork
+/public/**/*.js
+/public/**/*.css
+
+# Vendor Exclusions
+/vendor
+/resources/assets/vendor
+/workbench
+
+# Environment exclusions
+.env
+/.idea
+Homestead.json
+Homestead.yaml
+.php_cs.cache
+debug.log
+
+
+/public/mix-manifest.json
+.phpunit.result.cache
+phpunit.dusk.xml
+.js.LICENSE
