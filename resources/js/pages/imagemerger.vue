@@ -18,7 +18,9 @@
 
 <script>
 export default {
-
+  metaInfo() {
+    return { title: 'Image Merger'};
+  },
     data(){
         return{
             url: ''

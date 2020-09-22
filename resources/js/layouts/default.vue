@@ -1,5 +1,5 @@
 <template>
-  <div class="main-layout bg-gray-100 dark:bg-gray-900" style="height: 100vh">
+<div class="main-layout">
     <Navbar />
 
     <div class="container mt-4">
@@ -23,7 +23,9 @@ export default {
 };
 </script>
 
-<style scoped>
-
+<style>
+body{
+  background-color: #1A202C!important;
+}
 
 </style>

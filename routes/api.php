@@ -12,6 +12,7 @@ use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MergeController;
 use App\Http\Controllers\ColorController;
+use App\Http\Controllers\PDFController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,4 +51,5 @@ Route::group(['middleware' => 'guest:api', 'as' => 'api.guest.'], function () {
 
     Route::post('posturl', [MergeController::class, 'create']);
     Route::get('getcolors', [ColorController::class, 'createRandomColor']);
+    Route::post('uploadpdf', [PDFController::class, 'upload']);
 });

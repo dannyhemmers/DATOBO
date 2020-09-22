@@ -1,5 +1,5 @@
 <template>
-  <nav class="shadow py-3 dark:bg-gray-900">
+  <nav class="shadow py-3 dark:bg-gray-800">
     <div class="container flex-between mx-auto">
       <div class="flex-around sm:flex-between">
         <router-link
