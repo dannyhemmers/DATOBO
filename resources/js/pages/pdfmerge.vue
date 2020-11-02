@@ -1,18 +1,41 @@
 <template>
     <span class="text-body">
-        <div class="font-mono text-5xl font-bold text-center">
+
+        <div class="text-h4 text-center">
             PDF Merger
         </div>
-        <div class="mx-auto shadow-xl rounded to w-full md:w-2/4 p-6 mt-8 my-2">
-            <h3 class="text-grey-dark text-sm font-medium font-sans leading-normal">PDF Dateien hier hochladen (Max. 10 Dateien)</h3>
-            <p class="my-3 text-grey font-light tracking-wide font-sans leading-normal text-sm"></p>
+        
+        <v-row align-content="center" justify="center">
+        <v-col
+          cols="12"
+          sm="6"
+          md="9"
+          lg="6"
+          xl="4"
+        >
+            <p class="text-h5 text-center">Upload PDF Files here</p>
             <vue-dropzone 
               @vdropzone-complete-multiple="complete"
               ref="myVueDropzone" 
               id="dropzone" 
               :options="dropzoneOptions"></vue-dropzone>
-            <button @click="postPDFs" class="bg-red-600 hover:bg-red-500 px-3 py-2 rounded w-full focus:outline-none mt-4">Abschicken</button>
-        </div>
+                        
+              <v-btn 
+                :loading="isloading" 
+                large 
+                color="yellow" 
+                light
+                @click="loader = isloading; getColors()" 
+                class="mt-3"
+                elevation="17"    
+                width="100%"
+            >
+                Submit
+            </v-btn>
+
+        </v-col>
+        </v-row>
+            
     </span>
 </template>
 

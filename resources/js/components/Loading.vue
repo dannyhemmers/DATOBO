@@ -4,7 +4,7 @@
       width: `${percent}%`,
       height: height,
       opacity: show ? 1 : 0,
-      'background-color': canSuccess ? $themeColor : failedColor
+      'background-color': 'yellow'
     }"
     class="progress"
   />
@@ -18,7 +18,7 @@ export default {
     show: false,
     canSuccess: true,
     duration: 3000,
-    height: "3px",
+    height: "1px",
     failedColor: "red"
   }),
 

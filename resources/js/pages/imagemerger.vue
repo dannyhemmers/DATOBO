@@ -1,18 +1,39 @@
 <template>
     <span class="text-body">
-        <div class="font-mono text-5xl font-bold text-center">
-            Image Merger
+        <div class="text-h4 text-center">
+            Image Gallery Merger
         </div>
-        <div class="mx-auto shadow-xl rounded to w-full md:w-2/4 p-6 mt-8 my-2">
-            <div class="flex justify-between items-center">
-                <h4 class="uppercase text-grey text-xs text-wide tracking-wide font-thin ">URL Eingeben</h4>
-            </div>
-            <h3 class="text-grey-dark text-sm font-medium font-sans leading-normal">Gib eine URL zu imgur oder Twitter ein!</h3>
-            <p class="my-3 text-grey font-light tracking-wide font-sans leading-normal text-sm"></p>
-    
-            <input type="text" v-model="url" class="text-gray-700 w-full rounded px-3 py-2" placeholder="imgur / Twitter URL"/>
-            <button @click="postURL" class="bg-red-600 hover:bg-red-500 px-3 py-2 rounded w-full focus:outline-none mt-4">Abschicken</button>
-        </div>
+        
+        <v-row align-content="center" justify="center">
+        <v-col
+          cols="12"
+          sm="6"
+          md="9"
+          lg="6"
+          xl="3"
+        >
+            <p class="text-h5">Enter URL to imgur / twitter Image Gallery</p>
+            <v-text-field 
+                outlined
+                placeholder="Instagram / Youtube URL"    
+            >
+
+            </v-text-field>
+            <v-btn 
+                :loading="isloading" 
+                large 
+                color="yellow" 
+                light
+                @click="loader = isloading; postGallery()" 
+                class=""
+                elevation="17"    
+                width="100%"
+            >
+                Download
+                <v-icon>mdi-download</v-icon>
+            </v-btn>
+        </v-col>
+        </v-row>
     </span>
 </template>
 

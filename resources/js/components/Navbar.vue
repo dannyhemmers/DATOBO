@@ -1,34 +1,29 @@
 <template>
-  <nav class="shadow py-3 dark:bg-gray-800">
-    <div class="container flex-between mx-auto">
-      <div class="flex-around sm:flex-between">
-        <router-link
-          :to="{ name: 'home'}"
-          class="mr-3 my-3 text-xl text-gray-200"
-          v-text="appName"
-        />
-        <LocaleDropdown />
-      </div>
-      <div class="flex-around sm:flex-between">
-        <template>
-          <div class="mx-2 relative">
+<v-app-bar
+      color=""
+    >
 
-          </div>
-        </template>
-      </div>
-    </div>
-  </nav>
+      <v-toolbar-title>
+        <router-link class="navbarLogo" :to="{ name: 'home'}">  
+          <v-icon large>mdi-toolbox</v-icon>
+          DATOBO
+        </router-link>
+      </v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+    </v-app-bar>
+
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import LocaleDropdown from "./LocaleDropdown";
 import { directive as clickOutside } from "vue-on-click-outside";
 import { setDarkTheme } from "../utilities/utils";
 
 export default {
   components: {
-    LocaleDropdown
+    
   },
   directives: {
     clickOutside
@@ -68,5 +63,9 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style scoped>
+.navbarLogo{
+  text-decoration: none!important;
+  color: white!important;
+}
 </style>

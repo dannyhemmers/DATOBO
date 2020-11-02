@@ -21,6 +21,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "mikehaertl/php-pdftk": "^0.9.1",
+        "norkunas/youtube-dl-php": "^1.6",
         "predis/predis": "^1.1",
         "pusher/pusher-php-server": "^4.1",
         "spatie/laravel-permission": "^3.4",
