@@ -11,14 +11,17 @@ class ColorController extends Controller
     {
         $arr = array();
         
-        for($i = 0; $i < 12; $i++)
+        for($i = 0; $i < 9; $i++)
         {
             $colorObject = new \stdClass();
 
             $red = str_pad(strval(rand(0,255)), 3, "0", STR_PAD_LEFT);
-            $blue = str_pad(strval(rand(0,255)), 3, "0", STR_PAD_LEFT);
             $green = str_pad(strval(rand(0,255)), 3, "0", STR_PAD_LEFT);
+            $blue = str_pad(strval(rand(0,255)), 3, "0", STR_PAD_LEFT);
 
+            $colorObject->red = $red;
+            $colorObject->green = $green;
+            $colorObject->blue = $blue;
             $colorObject->color = 'rgb('. $red .', '. $green .', '. $blue .')';
             $colorObject->hex = '#' . $this->toHexString($red) . $this->toHexString($green) . $this->toHexString($blue);
             $colorObject->colorcomp = 'rgb('. $this->calcCompColor($red) .', '. $this->calcCompColor($green) .', '. $this->calcCompColor($blue) .')';
@@ -35,6 +38,7 @@ class ColorController extends Controller
         return str_pad(dechex(intval($color)), 2, "0", STR_PAD_LEFT);
     }
 
+    //Not sure if this is really the complementary color???
     public function calcCompColor($color)
     {
         return str_pad(255 - intval($color), 3, "0", STR_PAD_LEFT);

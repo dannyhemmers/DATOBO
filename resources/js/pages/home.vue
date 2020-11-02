@@ -1,89 +1,58 @@
 <template>
 <div>
 
-  <p class="text-body text-center text-6xl font-mono mb-0">DATOBO</p>
-  <p class="text-center text-xl text-gray-500  mt-0">Danny's ToolBox</p>
-  <div class="p-24 flex flex-wrap items-center justify-center">
-      
+  <p class="text-h2 text-center mb-0">DATOBO</p>
+  <p class="text-h6 text-center mt-0 mb-6">Danny's ToolBox</p>
 
+<v-card
+  class="mx-auto my-3"
+  max-width="600"
+  elevation="14">
+  <v-card-title class="headline"><v-icon>mdi-instagram</v-icon>Instagram + <v-icon class="ml-1">mdi-youtube</v-icon>Youtube Video Downloader</v-card-title>
+  
+  <v-card-subtitle>Download Videos from Youtube or Instagram</v-card-subtitle>
 
-  <div class="container flex mx-auto w-full items-center justify-center">
- 
-   <ul class="flex flex-col">
-     <router-link :to="{ name: 'imagemerger'}">
-        <li class="border-gray-400 flex flex-row mb-2">
-          <div class="select-none cursor-pointer bg-gray-700 rounded-md flex flex-1 items-center px-24 py-6 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
-            <div class="flex-1 text-center">
-              <div class="text-xl	font-medium text-gray-100">Image Merger</div>
-              <div class="text-gray-300 text-sm">Merge multiple Images into 1</div>
-            </div>
-          </div>
-        </li>
-     </router-link>
-     <router-link :to="{ name: 'randomcolor'}">
-        <li class="border-gray-400 flex flex-row mb-2">
-          <div class="select-none cursor-pointer bg-gray-700 rounded-md flex flex-1 items-center px-24 py-6 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
-            <div class="flex-1 text-center">
-              <div class="text-xl font-medium text-gray-100">Random Color Generator</div>
-              <div class="text-gray-300 text-sm">Generate Random Colors</div>
-            </div>
-          </div>
-        </li>
-     </router-link>
-     <router-link :to="{ name: 'pdfmerge'}">
-        <li class="border-gray-400 flex flex-row mb-2">
-          <div class="select-none cursor-pointer bg-gray-700 rounded-md flex flex-1 items-center px-24 py-6 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
-            <div class="flex-1 text-center">
-              <div class="text-xl font-medium text-gray-100">PDF Merger</div>
-              <div class="text-gray-300 text-sm">Merge multiple PDFs into one</div>
-            </div>
-          </div>
-        </li>
-     </router-link>
-    </ul>
-    
-  </div>
-<!--       
-      <router-link :to="{ name: 'imagemerger'}">
-        <div class="flex-shrink-0 m-6 relative overflow-hidden bg-teal-500 rounded-lg shadow-lg">
-          <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none" style="transform: scale(1.5); opacity: 0.1;">
-            <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="white"/>
-            <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white"/>
-          </svg>
+  <v-card-actions>
+    <v-btn large elevation="5" :to="{ name: 'downloader'}" >Video Downloader <v-icon>mdi-download</v-icon></v-btn>
+  </v-card-actions>
+</v-card> 
 
-          <div class="text-white text-center px-6 pb-6 mt-6">
-            <span class="font-semibold text-xl">Image Merger</span>
-          </div>
-        </div>
-      </router-link>
+<v-card
+  class="mx-auto my-3"
+  max-width="600"
+  elevation="14">
+  <v-card-title class="headline"><v-icon>mdi-image-multiple</v-icon>Image Merger</v-card-title>
 
-      <router-link :to="{ name: 'randomcolor'}">
-        <div class="flex-shrink-0 m-6 relative overflow-hidden bg-purple-500 rounded-lg shadow-lg">
-          <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none" style="transform: scale(1.5); opacity: 0.1;">
-            <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="white"/>
-            <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white"/>
-          </svg>
+  <v-card-subtitle>Merge multiple Images into one single file.</v-card-subtitle>
 
-          <div class=" text-white text-center px-6 pb-6 mt-6">
-              <span class="font-semibold text-xl">Random Color Generator</span>
-          </div>
-        </div>
-      </router-link>
+  <v-card-actions>
+    <v-btn large elevation="5" :to="{ name: 'imagemerger'}">Image Merger <v-icon>mdi-image-edit</v-icon></v-btn>
+  </v-card-actions>
+</v-card> 
+<v-card
+  class="mx-auto my-3"
+  max-width="600"
+  elevation="14">
+  <v-card-title class="headline"><v-icon>mdi-file-pdf</v-icon> PDF Tools</v-card-title>
 
-      <router-link :to="{ name: 'pdfmerge'}">
-        <div class="flex-shrink-0 m-6 relative overflow-hidden bg-red-500 rounded-lg shadow-lg">
-          <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none" style="transform: scale(1.5); opacity: 0.1;">
-            <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="white"/>
-            <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white"/>
-          </svg>
+  <v-card-subtitle>Edit PDFs. Merging, extracting, etc.</v-card-subtitle>
 
-          <div class="text-white text-center px-6 pb-6 mt-6">
-              <span class="font-semibold text-xl">PDF Merger</span>
-          </div>
-        </div>
-      </router-link> -->
-      
-    </div>
+  <v-card-actions>
+    <v-btn large elevation="5" :to="{ name: 'pdfmerge'}" >Go to PDF Tools <v-icon>mdi-hammer-screwdriver</v-icon></v-btn>
+  </v-card-actions>
+</v-card>
+<v-card
+  class="mx-auto my-3"
+  max-width="600"
+  elevation="14">
+  <v-card-title class="headline"><v-icon>mdi-eyedropper-variant</v-icon> Color</v-card-title>
+
+  <v-card-subtitle>Generate Random Colorcodes</v-card-subtitle>
+
+  <v-card-actions>
+    <v-btn large elevation="5" :to="{ name: 'randomcolor'}" >Go to Random Color Generator <v-icon>mdi-palette</v-icon></v-btn>
+  </v-card-actions>
+</v-card>
 </div>
 </template>
 

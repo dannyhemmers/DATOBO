@@ -1,4 +1,6 @@
 <template>
+<v-app> 
+<v-main>
 <div class="main-layout">
     <Navbar />
 
@@ -10,6 +12,8 @@
       </transition>
     </div>
   </div>
+</v-main>
+</v-app>
 </template>
 
 <script>

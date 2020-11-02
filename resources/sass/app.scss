@@ -1,19 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@tailwind screens;
-
 @import "vendor";
-
 @import "helpers";
-
 @import 'variables';
-
 @import 'elements/elements';
-
 @import 'transitions';
-
 * {
-  @apply transition-all;
+    @apply transition-all;
 }

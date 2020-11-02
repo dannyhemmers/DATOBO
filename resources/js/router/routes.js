@@ -7,6 +7,7 @@ function page(path) {
 
 export default [
     { path: "/", name: "home", component: page("home.vue") },
+    { path: "/downloader", name: "downloader", component: page("downloader.vue") },
     { path: "/imagemerger", name: "imagemerger", component: page("imagemerger.vue") },
     { path: "/randomcolor", name: "randomcolor", component: page("randomcolor.vue") },
     { path: "/pdfmerge", name: "pdfmerge", component: page("pdfmerge.vue") },
