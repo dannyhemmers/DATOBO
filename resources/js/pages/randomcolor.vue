@@ -1,44 +1,59 @@
 <template>
     <div class="text-body">
         
-        <div class="text-h4 text-center">
-            Random Color
-        </div>
+        <v-row align-content="center" justify="center">
+        <v-col
+          cols="12"
+          sm="6"
+          md="9"
+          lg="6"
+          xl="4"
+        >
+            <v-card elevation="18" rounded class="ma-0 pa-6">
+            <div class="text-h4 text-center">
+                {{ $t("random_color") }}
+            </div>
+
+                <div class="text-center">
+                <p class="text-h5">{{ $t("color_description") }}</p>
+                <v-btn 
+                    :loading="isloading" 
+                    large 
+                    @click="loader = isloading; getColors()" 
+                    class="mx-auto"
+                    elevation="17">
+                    {{ $t("generate") }}
+                </v-btn>
+                </div>
+            </v-card>
+
+        </v-col>
+        </v-row>
+
         
-        <div class="text-center">
-            <p class="text-h5">Generate Random Color Codes</p>
-            <v-btn 
-                :loading="isloading" 
-                large 
-                color="blue-grey darken-3" 
-                @click="loader = isloading; getColors()" 
-                class="mx-auto"
-                elevation="17"    
-            >
-                    Generate
-            </v-btn>
-        </div>
+
 
         <v-fade-transition>
-            <div v-if="!isloading" class="mt-5">
+            <div v-if="!isloading" class="mt-0">
             <v-container>
-            <v-row>
+            <v-row dense> 
                 <v-col
                     v-for="(color, index) in randomcolors"
                     :key="`color-${index}`" 
                     cols="12"
                     sm="4"
+                    dense
                 >
                     <v-card
-                    class="pa-2"
+                    class="px-2 py-1"
                     rounded
                     >
                     <v-card-actions class="mt-2 text-caption">
-                        Color
+                        {{ $t("color") }}
                         <v-spacer></v-spacer>
-                        Complementary Color
+                        {{ $t("complementary_color") }}
                     </v-card-actions>                    
-                    <v-card-actions class="mt-2 mb-0 text-overline">
+                    <v-card-actions class="mt-2 mx-1 mb-0 text-overline">
                         {{color.hex.toUpperCase()}}
                         <v-spacer></v-spacer>
                         {{color.hexcomp.toUpperCase()}}

@@ -39,5 +39,22 @@
     "resend_verification_link": "Verifikationslink noch mal senden?",
     "failed_to_verify_email": "E-Mail Verifikation fehlgeschlagen.",
     "verify_email_address": "Wir haben dir eine E-Mail mit einem Verifikationslink gesendet.",
-    "imagemerger": "Image Merger"
+    "imagemerger": "Image Merger",
+    "enter_video_url": "Gib die Video URL hier ein",
+    "video_downloader_description": "Lade Videos von Instagram, Reddit or Twitter herunter",
+    "merger_description": "Vereinige Bilder aus einem Multi-Bild Instagram Post zu einem einzigen Bild",
+    "enter_instagram_url": "Gib die URL des Instagram Posts ein",
+    "pdf_description": "Bearbeite PDF Dateien - Vereinigen, Exportieren einzelner Seiten, etc",
+    "upload_pdf_files_here": "PDF Dateien hier hochladen",
+    "drop_files_here": "Dateien hier reinziehen",
+    "color": "Farbe",
+    "random_color": "Zufallsfarbe",
+    "complementary_color": "Komplementärfarbe",
+    "color_description": "Generiere zufällige Farbcodes",
+    "generate": "Generieren",
+    "submit": "Abschicken",
+    "name": "Name",
+    "please_wait": "Bitte warten. Dies kann eine lange Zeit dauern",
+    "download": "Herunterladen",
+    "register_warning": "Registrieren hat zur Zeit noch keinerlei Nutzen. In Zukunft soll es möglich sein, eingereichte Pastes und Bilder in seinem Account zu speichern"
 }

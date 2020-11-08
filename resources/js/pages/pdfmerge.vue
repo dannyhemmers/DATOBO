@@ -1,19 +1,27 @@
 <template>
     <span class="text-body">
 
-        <div class="text-h4 text-center">
-            PDF Merger
-        </div>
-        
         <v-row align-content="center" justify="center">
         <v-col
           cols="12"
           sm="6"
           md="9"
           lg="6"
-          xl="4"
+          xl="6"
         >
-            <p class="text-h5 text-center">Upload PDF Files here</p>
+
+        <v-card elevation="18" color="red darken-3" class="my-6 pa-4 text-h5 text-center">
+            NOT WORKING FOR NOW - DO NOT TRY!
+        </v-card>
+
+            <v-card elevation="18" rounded class="ma-0 pa-6">
+            <div class="text-h4 text-center">
+              PDF Tools
+              <br>
+              <v-icon x-large>mdi-file-pdf</v-icon>
+            </div>
+            <p class="text-h5 text-center">{{ $t('upload_pdf_files_here') }}</p>
+
             <vue-dropzone 
               @vdropzone-complete-multiple="complete"
               ref="myVueDropzone" 
@@ -21,18 +29,16 @@
               :options="dropzoneOptions"></vue-dropzone>
                         
               <v-btn 
-                :loading="isloading" 
-                large 
-                color="yellow" 
-                light
-                @click="loader = isloading; getColors()" 
-                class="mt-3"
-                elevation="17"    
-                width="100%"
-            >
-                Submit
-            </v-btn>
-
+                  :loading="isloading" 
+                  large 
+                  type="submit"
+                  class="mt-3"
+                  elevation="10"    
+                  width="100%"
+                  @click="postPDFs">
+                    {{ $t("submit") }}
+              </v-btn>  
+            </v-card>
         </v-col>
         </v-row>
             
@@ -49,7 +55,10 @@ export default {
   },
     data(){
         return{
-            dropzoneOptions: {
+                isloading: false,
+                loader: null,
+                errors: '',
+              dropzoneOptions: {
               url: '/api/uploadpdf',
               paramName: 'pdfs',
               uploadMultiple: true,
@@ -67,6 +76,7 @@ export default {
 
     methods: {
     postPDFs(){
+      this.isloading = true
       this.$refs.myVueDropzone.processQueue()
     },
 
@@ -79,8 +89,13 @@ export default {
 
 <style scoped>
 >>>.vue-dropzone{
-  background-color: #29313f;
-  border: 4px solid #4A5568;
+  background-color: #1e1e1e;
+  border: 2px solid #3d3d3d;
+  border-radius: 4px;
   color: white;
+}
+
+>>>.dz-message{
+  color: grey;
 }
 </style>

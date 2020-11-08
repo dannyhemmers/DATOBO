@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "355956f43b93ded78ffd9b67f6c4a2d0",
+    "content-hash": "9cf24a3b7f76948fdbc1bf1b4a873631",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -366,6 +366,46 @@
             ],
             "abandoned": "react/http",
             "time": "2020-02-26T12:05:32+00:00"
+        },
+        {
+            "name": "dacoto/laravel-domain-validation",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dacoto/laravel-domain-validation.git",
+                "reference": "68b597c969a22e725dea27467a94ae6bd7372a3c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dacoto/laravel-domain-validation/zipball/68b597c969a22e725dea27467a94ae6bd7372a3c",
+                "reference": "68b597c969a22e725dea27467a94ae6bd7372a3c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/validation": "^6.0|^7.0|^8.0",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "dacoto\\DomainValidator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Cortés",
+                    "email": "cortestoledanodavid@gmail.com"
+                }
+            ],
+            "description": "A domain validator rule for Laravel",
+            "time": "2020-09-09T11:32:19+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -6555,6 +6595,7 @@
                 "faker",
                 "fixtures"
             ],
+            "abandoned": true,
             "time": "2019-12-12T13:22:17+00:00"
         },
         {

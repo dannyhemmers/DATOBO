@@ -12,7 +12,9 @@ use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MergeController;
 use App\Http\Controllers\ColorController;
+use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\PDFController;
+use App\Models\Authorisation\Role;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +27,7 @@ use App\Http\Controllers\PDFController;
 |
 */
 
-//Routes for users who are logge in
+//Routes for users who are logged in
 Route::group(['middleware' => 'auth:api', 'as' => 'api.dashboard.'], function () {
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
@@ -36,7 +38,7 @@ Route::group(['middleware' => 'auth:api', 'as' => 'api.dashboard.'], function ()
 });
 
 //Routes for guests
-Route::group(['middleware' => 'guest:api', 'as' => 'api.guest.'], function () {
+Route::group([], function () {
     Route::post('login', [LoginController::class, 'login'])->name('auth.login');
     Route::post('register', [RegisterController::class, 'register'])->name('auth.register');
 
@@ -49,7 +51,8 @@ Route::group(['middleware' => 'guest:api', 'as' => 'api.guest.'], function () {
     Route::post('oauth/{driver}', [OAuthController::class, 'redirectToProvider'])->name('oauth.redirect');
     Route::get('oauth/{driver}/callback', [OAuthController::class, 'handleProviderCallback'])->name('oauth.callback');
 
-    Route::post('posturl', [MergeController::class, 'create']);
+    Route::post('postgallery', [MergeController::class, 'create']);
     Route::get('getcolors', [ColorController::class, 'createRandomColor']);
     Route::post('uploadpdf', [PDFController::class, 'upload']);
+    Route::post('postvideourl', [DownloadController::class, 'download']);
 });

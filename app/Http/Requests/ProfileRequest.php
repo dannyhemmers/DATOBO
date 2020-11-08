@@ -30,7 +30,7 @@ class ProfileRequest extends FormRequest
     {
         // disposable email check at: https://github.com/Propaganistas/Laravel-Disposable-Email
         return [
-            'first_name' => 'required',
+            'name' => 'required',
             'email'      => 'required|email|unique:users,email,' . $this->user()->getKey(),
         ];
     }

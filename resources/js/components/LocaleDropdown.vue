@@ -1,10 +1,13 @@
 <template>
-  <v-select
-    :items="availableLocales"
-    dense
-    :label="currentLocale"
-    dark
-  />
+  <v-btn-toggle dense v-model="toggle_exclusive">
+        <v-btn @click="setLocale(availableLocales[0])">
+          EN
+        </v-btn>
+
+        <v-btn @click="setLocale(availableLocales[1])">
+          DE
+        </v-btn>
+      </v-btn-toggle>
 </template>
 
 <script>
@@ -31,12 +34,22 @@ export default {
   },
   data() {
     return {
-      lang: null
+      lang: null,
+      toggle_exclusive: 0
     };
   },
   mounted() {
     this.lang = this.currentLocale;
-    console.log(this.availableLocales)
+    if (this.lang.code == 'en')
+    {
+      this.toggle_exclusive = 0
+    }
+    else
+    {
+      this.toggle_exclusive = 1
+    }
+
+
   },
   methods: {
     setLocale(locale) {

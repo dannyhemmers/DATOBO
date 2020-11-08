@@ -10,6 +10,7 @@
         "ext-json": "*",
         "bensampo/laravel-enum": "^1.28",
         "beyondcode/laravel-websockets": "^1.3",
+        "dacoto/laravel-domain-validation": "^1.2",
         "doctrine/dbal": "^2.10",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",

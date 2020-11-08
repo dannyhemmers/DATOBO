@@ -8,9 +8,9 @@ Also meant as a learning exercise since I am currently learning VueJS during Cov
 
 ## Functionality (Will be expanded in the future - suggestions are always welcome)
 
-- Video Downloader for Instagram and Youtube videos (not working yet)
-- Image Gallery Merger to merge galleries of multiple image into a single image file (not working yet)
-- PDF Tools to manipulate PDF files like merging multiple files into one or extracing certain pages
+- Video Downloader for Instagram and Youtube videos (Work in Progress)
+- Image Gallery Merger to merge galleries of multiple image into a single image file (Work in Progress)
+- PDF Tools to manipulate PDF files like merging multiple files into one or extracing certain pages Work in Progress
 - Random Color Generator. Generates random colors and its complementary colors. In the future I'd like this to generate whole color palettes. The colors are already generated in the Backend on the PHP side. These colors shall later be savable into the Database for the current logged in user.
 
 ## Built with

@@ -4,7 +4,7 @@
       width: `${percent}%`,
       height: height,
       opacity: show ? 1 : 0,
-      'background-color': 'yellow'
+      'background-color': 'white'
     }"
     class="progress"
   />
