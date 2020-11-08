@@ -18,10 +18,9 @@ Also meant as a learning exercise since I am currently learning VueJS during Cov
 
 - Laravel 7
 - Vue + VueRouter
-- Pages with dynamic import and custom layouts
-- ~~Login, register, email verification and password reset~~ (Currently removed)
-- ~~Authentication with JWT~~ (Currently removed - Gets reinstated when I re-add Auth functionality)
-- ~~TailwindCSS~~ Vuetify
+- Login, register, ~~email verification and password reset~~ (Currently removed - I plan to let users register without verification)
+- Authentication with JWT
+- ~~TailwindCSS~~ Replaced Tailwind with Vuetify as I like Material Design much more
 
 ## Installation
 
