@@ -8,10 +8,11 @@ Also meant as a learning exercise since I am currently learning VueJS during Cov
 
 ## Functionality (Will be expanded in the future - suggestions are always welcome)
 
-- Video Downloader for Instagram and Youtube videos (Work in Progress)
-- Image Gallery Merger to merge galleries of multiple image into a single image file (Work in Progress)
-- PDF Tools to manipulate PDF files like merging multiple files into one or extracing certain pages Work in Progress
-- Random Color Generator. Generates random colors and its complementary colors. In the future I'd like this to generate whole color palettes. The colors are already generated in the Backend on the PHP side. These colors shall later be savable into the Database for the current logged in user.
+- Video Downloader for Instagram, Reddit and Twitter videos (Working - But error handling not yet fully completed)
+- Image Gallery Merger to Instagram galleries of multiple image into a single image file (Working - But error handling not yet fully completed)
+- PDF Tools to manipulate PDF files like merging multiple files into one or extracing certain pages (Work in Progress - very early stages)
+- Random Color Generator. Generates random colors and its complementary colors. In the future I'd like this to generate whole color palettes. The colors are already generated in the Backend on the PHP side. These colors shall later be savable into the Database for the current logged in user. (Basic functionality working)
+- Paste function for code snippets (Work in Progress)
 
 ## Built with
 
@@ -24,7 +25,8 @@ Also meant as a learning exercise since I am currently learning VueJS during Cov
 
 ## Installation
 
-- youtube-dl must be installed
+- PDFtk Server must be installed and be accessible via System PATH
+- youtube-dl must be installed and be accessible via System PATH
 - `git clone https://github.com/dannyhemmers/DATOBO.git`
 - Rename .env.example to .env and add Database information
 - `composer install`
@@ -51,5 +53,6 @@ npm run hot
 npm run production
 ```
 ## Email Verification
+I currently removed Email Verification. If you want it than you have to do the following:
 
 To enable email verification make sure that your `App\Models\User` model implements the `Illuminate\Contracts\Auth\MustVerifyEmail` contract.
