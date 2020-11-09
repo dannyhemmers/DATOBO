@@ -43,6 +43,8 @@ class DownloadController extends Controller
                 'output' => $timestamp . '.%(ext)s',
                 'restrict-filenames' => true
             ]);
+
+            $dl->setBinPath(env("YOUTUBE_DL", "/usr/local/bin/youtube-dl"));
             
             // Set the download path where you want to store downloaded data
             $dl->setDownloadPath(public_path('videodownloads'));
