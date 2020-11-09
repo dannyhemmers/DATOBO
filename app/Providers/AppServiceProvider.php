@@ -35,6 +35,8 @@ class AppServiceProvider extends ServiceProvider
             Schema::defaultStringLength(191);
         }
 
+        Schema::defaultStringLength(191);
+
         // Enable on delete cascade for sqlite connections
         if ($db->connection() instanceof SQLiteConnection) {
             $db->statement($db->raw('PRAGMA foreign_keys = ON'));
