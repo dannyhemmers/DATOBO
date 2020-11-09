@@ -6,17 +6,15 @@
     @click="login"
   >
     {{ $t("login_with") }}
-    <GithubIcon :size="68" />
   </button>
 </template>
 
 <script>
-import GithubIcon from "icons/Github.vue";
 
 export default {
   name: "LoginWithGithub",
   components: {
-    GithubIcon
+    
   },
   computed: {
     githubAuth: () => window.config.githubAuth,

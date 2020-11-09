@@ -14,7 +14,7 @@ $config = [
 
   <title>{{ config('app.name') }}</title>
 
-  <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+  <link rel="stylesheet" href="{{ mix('dist/css/app.css') }}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
 </head>
@@ -32,6 +32,6 @@ $config = [
   {{-- Load the application scripts --}}
 {{--  <script src="{{ mix('js/manifest.js') }}"></script>--}}
 {{--  <script src="{{ mix('js/vendor.bundle.js') }}"></script>--}}
-  <script src="{{ mix('js/app.js') }}"></script>
+<script src="{{ mix('dist/js/app.js') }}"></script>
 </body>
 </html>

@@ -4,23 +4,19 @@
       class="error flex-between flex-col sm:flex-row"
       v-if="form.errors.has(field)"
     >
-      <alert-octagon-icon class="icon-big" decorative />
       <p v-html="form.errors.get(field)" class="text-xs mx-2" />
-      <close-icon @click="form.errors.clear(field)" class="cursor-pointer" />
     </div>
   </transition>
 </template>
 
 <script>
 // todo functional
-import AlertOctagonIcon from "icons/AlertOctagon";
-import CloseIcon from "icons/CloseCircle";
+
 import { HasError } from "vform";
 export default {
   extend: HasError,
   components: {
-    AlertOctagonIcon,
-    CloseIcon
+
   },
   name: "Error",
   props: {

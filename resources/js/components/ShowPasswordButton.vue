@@ -1,18 +1,11 @@
 <template>
-  <eye-icon
-    @mousedown="showPass"
-    @mouseup="hidePass"
-    id="showPass"
-    :class="color"
-    class="z-50"
-  />
+
 </template>
 
 <script>
-import EyeIcon from "icons/Eye";
 export default {
   name: "ShowPassword",
-  components: { EyeIcon },
+  components: {  },
   props: {
     color: { type: String, required: false }
   },
