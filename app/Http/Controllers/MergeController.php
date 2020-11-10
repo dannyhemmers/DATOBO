@@ -50,7 +50,7 @@ class MergeController extends Controller
                     $url = $edge['node']['display_url'];
                     $width = \Image::make($url)->width();
                     $height = \Image::make($url)->height();
-                    array_push($imageArray, array($width,$height,$url));
+                    array_push($imageArray, array($width,$height,$url),);
                 }
 
                 $finalheight = 0;
