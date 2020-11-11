@@ -11,7 +11,7 @@
 
       <v-spacer></v-spacer>
       <template v-if="user">
-              <v-menu
+      <v-menu
         offset-y
         z-index="100"
         v-if="!$vuetify.breakpoint.smAndDown"
