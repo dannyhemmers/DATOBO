@@ -1,53 +1,60 @@
-const path = require('path')
-const fs = require('fs-extra')
-const mix = require('laravel-mix')
-require('laravel-mix-versionhash')
-    // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const path = require("path");
+const fs = require("fs-extra");
+const mix = require("laravel-mix");
+require("laravel-mix-purgecss");
+require("laravel-mix-versionhash");
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+
+mix.config.webpackConfig.output = {
+    chunkFilename: "js/[name].bundle.js" // until resolved https://github.com/JeffreyWay/laravel-mix/issues/1889
+};
 
 mix
-    .js('resources/js/app.js', 'public/dist/js')
-    .sass('resources/sass/app.scss', 'public/dist/css')
-
-.disableNotifications()
+    .js("resources/js/app.js", "public/js")
+    .sass("resources/sass/app.scss", "public/css");
 
 if (mix.inProduction()) {
     mix
-    // .extract() // Disabled until resolved: https://github.com/JeffreyWay/laravel-mix/issues/1889
-    // .version() // Use `laravel-mix-versionhash` for the generating correct Laravel Mix manifest file.
-        .versionHash()
+
+        .versionHash();
 } else {
-    mix.sourceMaps()
+    mix.sourceMaps();
 }
 
-mix.webpackConfig({
-    plugins: [
-        // new BundleAnalyzerPlugin()
-    ],
-    resolve: {
-        extensions: ['.js', '.json', '.vue'],
-        alias: {
-            '~': path.join(__dirname, './resources/js')
+mix
+    .webpackConfig({
+        plugins: [
+            // new BundleAnalyzerPlugin()
+        ],
+        resolve: {
+            extensions: [".js", ".json", ".vue"],
+            alias: {
+                "~": path.join(__dirname, "./resources/js"),
+                "@": path.join(__dirname, "./resources"),
+                icons: path.resolve(__dirname, "node_modules/vue-material-design-icons")
+            }
         }
-    },
-    output: {
-        chunkFilename: 'dist/js/[chunkhash].js',
-        path: mix.config.hmr ? '/' : path.resolve(__dirname, './public/build')
-    }
-})
+    })
+    .options({
+        processCssUrls: false
+    });
 
-mix.then(() => {
-    if (!mix.config.hmr) {
-        process.nextTick(() => publishAseets())
-    }
-})
+// mix.then(() => {
+//   if (!mix.config.hmr) {
+//     process.nextTick(() => publishAssets());
+//   }
+// });
 
-function publishAseets() {
-    const publicDir = path.resolve(__dirname, './public')
+function publishAssets() {
+    const publicDir = path.resolve(__dirname, "./public");
 
     if (mix.inProduction()) {
-        fs.removeSync(path.join(publicDir, 'dist'))
+        fs.removeSync(path.join(publicDir, "dist"));
     }
 
-    fs.copySync(path.join(publicDir, 'build', 'dist'), path.join(publicDir, 'dist'))
-    fs.removeSync(path.join(publicDir, 'build'))
+    fs.copySync(
+        path.join(publicDir, "build", "dist"),
+        path.join(publicDir, "dist")
+    );
+    fs.removeSync(path.join(publicDir, "build"));
 }
