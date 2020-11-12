@@ -8,7 +8,7 @@
     title="Video Downloader"
     :subtitle="$t('video_downloader_description')"
     path="downloader"
-    :icons="['mdi-instagram', 'mdi-reddit', 'mdi-twitter']"
+    :icons="['mdi-facebook', 'mdi-instagram', 'mdi-reddit', 'mdi-twitter']"
   />
 
   <HomeCard 

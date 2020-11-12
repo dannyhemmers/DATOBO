@@ -11,8 +11,9 @@
         >
             <v-card elevation="18" rounded class="ma-0 pa-6">
             <div class="text-h4 text-center">
-              Instagram + Reddit + Twitter Video Downloader
+              Facebook + Instagram + Reddit + Twitter Video Downloader
               <br>
+              <v-icon x-large>mdi-facebook</v-icon>
               <v-icon x-large>mdi-instagram</v-icon>
               <v-icon x-large>mdi-reddit</v-icon>
               <v-icon x-large>mdi-twitter</v-icon>
@@ -23,7 +24,7 @@
               <v-text-field 
                   outlined
                   solo
-                  placeholder="Instagram / Reddit / Twitter URL"    
+                  placeholder="Facebook / Instagram / Reddit / Twitter URL"    
                   prepend-inner-icon="mdi-link"
                   v-model="form.url"
               >
@@ -124,13 +125,11 @@ export default {
         this[l] = !this[l]
       },
     },
-    components: {
-        
-    },
 
     methods: {
     postURL(){
         this.isloading = true
+
         this.form.post('/api/postvideourl/')
         .then(({ data }) => { 
           this.videoinfo = data
@@ -140,6 +139,7 @@ export default {
           this.errors = error
           this.isloading = false
         });
+
         this.form.url = '' 
     },
     downloadFile(){

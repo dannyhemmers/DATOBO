@@ -28,7 +28,7 @@ class DownloadController extends Controller
 
         $domainvalidator = new DomainValidator;
         $url = $request->url;
-        $domains = array( 'instagram.com', 'twitter.com', 'reddit.com' );
+        $domains = array( 'instagram.com', 'twitter.com', 'reddit.com', 'facebook.com' );
         
 
         /**
