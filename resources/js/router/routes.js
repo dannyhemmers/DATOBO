@@ -11,6 +11,8 @@ export default [
     { path: "/imagemerger", name: "imagemerger", component: page("imagemerger.vue") },
     { path: "/randomcolor", name: "randomcolor", component: page("randomcolor.vue") },
     { path: "/pdfmerge", name: "pdfmerge", component: page("pdfmerge.vue") },
+    { path: "/nopaste", name: "nopaste", component: page("nopaste.vue") },
+    { path: '/p/:uid', name: 'displaypaste', component: page('displaypaste.vue') },
 
     { path: "/login", name: "login", component: page("auth/login.vue") },
     { path: "/register", name: "register", component: page("auth/register.vue") },

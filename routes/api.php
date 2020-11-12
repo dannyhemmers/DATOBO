@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MergeController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\DownloadController;
+use App\Http\Controllers\PasteController;
 use App\Http\Controllers\PDFController;
 use App\Models\Authorisation\Role;
 
@@ -55,4 +56,6 @@ Route::group([], function () {
     Route::get('getcolors', [ColorController::class, 'createRandomColor']);
     Route::post('uploadpdf', [PDFController::class, 'upload']);
     Route::post('postvideourl', [DownloadController::class, 'download']);
+    Route::post('postpaste', [PasteController::class, 'postPaste']);
+    Route::get('getpaste/{uid}', [PasteController::class, 'getPaste']);
 });

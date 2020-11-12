@@ -114,6 +114,9 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
+    public function pastes() {
+        return $this -> hasMany('App\Models\Paste');
+    }
 
     /**
      * This fix will return the default guard name set at permission creation

@@ -55,5 +55,11 @@
     "name": "Name",
     "please_wait": "Please Wait. This might take a long time",
     "download": "Download",
-    "register_warning": "Registering has no use for now. In the future it will be possible to save pastes and images into your account"
+    "register_warning": "Registering has no use for now. In the future it will be possible to save pastes and images into your account",
+    "nopaste": "Save Text- and Code-Snippets to share with others",
+    "enter_snippet": "Enter your text or code here",
+    "language": "Language",
+    "uploaded_by": "Uploaded by",
+    "guest": "Guest",
+    "date": "Date"
 }

@@ -20,6 +20,7 @@
         "pusher-js": "^5.1.1",
         "vform": "^1.0.1",
         "vue": "^2.6.11",
+        "vue-code-highlight": "^0.7.6",
         "vue-color-picker-wheel": "^0.4.3",
         "vue-i18n": "^8.17.4",
         "vue-material-design-icons": "^4.6.0",

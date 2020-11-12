@@ -4,74 +4,55 @@
   <p class="text-h2 text-center mb-0">DATOBO</p>
   <p class="text-h6 text-center mt-0 mb-6">Danny's ToolBox</p>
 
-<v-hover v-slot="{ hover }">
-<v-card
-  class="mx-auto my-3"
-  max-width="600"
-  :elevation="hover ? 14 : 2"
-  :class="{ 'on-hover': hover }"
-  :to="{ name: 'downloader'}">
-  <v-card-title class="headline">
-    <v-icon>mdi-instagram</v-icon>
-    <v-icon class="ml-1">mdi-reddit</v-icon>
-    <v-icon class="ml-1 mr-1">mdi-twitter</v-icon> Video Downloader 
-  </v-card-title>
-  
-  <v-card-subtitle>{{ $t("video_downloader_description") }}</v-card-subtitle>
-</v-card> 
-</v-hover>
+  <HomeCard 
+    title="Video Downloader"
+    :subtitle="$t('video_downloader_description')"
+    path="downloader"
+    :icons="['mdi-instagram', 'mdi-reddit', 'mdi-twitter']"
+  />
 
-<v-hover v-slot="{ hover }">
-<v-card
-  class="mx-auto my-3"
-  max-width="600"
-  :elevation="hover ? 14 : 2"
-  :class="{ 'on-hover': hover }"
-  :to="{ name: 'imagemerger'}">
-  <v-card-title class="headline"><v-icon class="mr-1">mdi-instagram</v-icon>Instagram Image-Gallery Merger</v-card-title>
+  <HomeCard 
+    title="Instagram Image-Gallery Merger"
+    :subtitle="$t('merger_description')"
+    path="imagemerger"
+    :icons="['mdi-instagram']"
+  />
 
-  <v-card-subtitle>{{ $t("merger_description") }}</v-card-subtitle>
-</v-card> 
-</v-hover>
+  <HomeCard 
+    title="Nopaste"
+    :subtitle="$t('nopaste')"
+    path="nopaste"
+    :icons="['mdi-content-paste']"
+  />
 
-<v-hover v-slot="{ hover }">
-<v-card
-  class="mx-auto my-3"
-  max-width="600"
-  :elevation="hover ? 14 : 2"
-  :class="{ 'on-hover': hover }"
-  :to="{ name: 'pdfmerge'}">
-  <v-card-title class="headline"><v-icon class="mr-1">mdi-file-pdf</v-icon> PDF Tools</v-card-title>
+  <HomeCard 
+    title="PDF Tools"
+    :subtitle="$t('pdf_description')"
+    path="pdfmerge"
+    :icons="['mdi-file-pdf']"
+  />
 
-  <v-card-subtitle>{{ $t("pdf_description") }}</v-card-subtitle>
-</v-card>
-</v-hover>
-
-<v-hover v-slot="{ hover }">
-<v-card
-  class="mx-auto my-3"
-  max-width="600"
-  :elevation="hover ? 14 : 2"
-  :class="{ 'on-hover': hover }"
-  :to="{ name: 'randomcolor'}">
-  <v-card-title class="headline"><v-icon class="mr-1">mdi-eyedropper-variant</v-icon>{{ $t("color") }}</v-card-title>
-
-  <v-card-subtitle>{{ $t("color_description") }}</v-card-subtitle>
-</v-card>
-</v-hover>
+  <HomeCard 
+    :title="$t('color')"
+    :subtitle="$t('color_description')"
+    path="randomcolor"
+    :icons="['mdi-eyedropper-variant']"
+  />
 
 </div>
 </template>
 
 <script>
 import LocaleDropdown from "../components/LocaleDropdown"
+import HomeCard from "../components/HomeCard"
 
 export default {
   metaInfo() {
     return { title: this.$t("home") };
   },
   components: {
-    LocaleDropdown
+    LocaleDropdown,
+    HomeCard
   },
   data() {
     return {
